@@ -31,7 +31,7 @@ AppendDefaultDirName=False
 WizardSmallImageFile=SmallImage.bmp
 
 [Languages]
-Name: "en"; MessagesFile: "compiler:Default.isl"
+Name: "ru"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
