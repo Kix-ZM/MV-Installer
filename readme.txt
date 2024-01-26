@@ -2,7 +2,7 @@
 
 An overhaul mod for FTL: Faster Than Light
 Developed by;
-Kix, Laythe, AgentTHeKat, PDTM, MoreOrLesser, Felipemello, Squishyboi, JerC, MaddieDoktor, Solid Boi, Woona, and Markus McCloud
+Kix, Laythe, AgentTHeKat, PDTM, MoreOrLesser, Felipemello, Squishyboi, Jersee, MaddieDoktor, R4V3-0N, localresources, Lucca, Foo757
 
 Installation:
 1. Select the root folder of your FTL installation if it is not selected automatically!
@@ -38,7 +38,7 @@ These factions all have their own sectors, ships, crew, and often times special 
 
 -Completely reworked stores that now function as additional events and are owned by different factions. Different store owners are more likely to sell different things, and some might not be so keen on selling to you at all unless you have something to convince them
 -Sylvan the Traveling Merchant can be found all around the galaxy, selling many items (usually at a discount) as well as providing additional quests in certain sectors. Don't try and provoke him however, as only the strongest and most powerful ships could ever hope to take on his mighty vessel
--Battle over 800 new enemies, including stations that can't evade shots but have stronger defenses, battleships that can wield up to 6 weapons, motherships that wield massive arrays of drones, and more
+-Battle over 800 new enemies, including Stations that can't evade shots but have stronger defenses, Battleships that can wield up to 6 weapons, Motherships that wield massive arrays of drones, and more
 -Use combat augments to disable your enemies's systems, and install internal upgrades to improve your ship in many different ways without using augment slots
 -Upgrade your own crew using the Crew Lab, to specialize them towards certain niches that work better with your playstyles
 -All of this and more awaits you in the completely overhauled experience that Multiverse brings to FTL: Faster Than Light

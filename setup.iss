@@ -8,7 +8,7 @@
 [Setup]
 AppId={{9C72B5EE-6B23-41A5-9CA6-0264207864B3}
 AppName=FTL: Multiverse
-AppVersion=v5.3
+AppVersion=v5.4.1
 AppPublisher=subsetgames.com/forum/viewtopic.php?f=11&t=35332&sid=edd22b7904dc8aa08f086f9a194d1de7
 AppCopyright=subsetgames.com/forum/viewtopic.php?f=11&t=35332&sid=edd22b7904dc8aa08f086f9a194d1de7
 AppPublisherURL=https://subsetgames.com/forum/viewtopic.php?f=11&t=35332&sid=edd22b7904dc8aa08f086f9a194d1de7
@@ -16,7 +16,7 @@ AppSupportURL=https://discord.gg/ftlmultiverse
 AppUpdatesURL=https://discord.gg/ftlmultiverse
 DefaultDirName={code:GetDefaultDir}
 DefaultGroupName=Multiverse
-OutputBaseFilename=Multiverse 5.3
+OutputBaseFilename=Multiverse 5.4.1
 SetupIconFile=icon.ico
 Compression=lzma2/ultra64
 SolidCompression=yes
@@ -46,10 +46,6 @@ Name: "MultiverseCore"; Description: "Core Mod"; Types: compact custom; Flags: f
 Name: "MultiverseCore\TRC"; Description: "The Renegade Collection"; Types: custom
 Name: "MultiverseCore\SlockFlag"; Description: "Slocknog's Flagship"; Types: custom
 Name: "MultiverseCore\VanillaUI"; Description: "Restore Vanilla UI"; Types: custom
-Name: "MultiverseCore\Holiday"; Description: "The Holiday Special"; Types: custom
-
-Name: "MultiverseDiff"; Description: "Difficulty Mods"; Types: custom
-Name: "MultiverseDiff\Starvation"; Description: "Scrap Starvation"; Types: custom
 
 Name: "MultiverseThr"; Description: "3rd Party Addons"; Types: custom
 Name: "MultiverseThr\GenGibs"; Description: "Generated Gibs"; Types: custom
@@ -71,16 +67,14 @@ Source: "Files\Modman\modman_readme\readme_modders.txt"; DestDir: "{app}\modman_
 Source: "Files\Modman\backup\backup.txt"; DestDir: "{app}\backup";
 
 Source: "Files\Modman\mods\MV Read Me.zip"; DestDir: "{app}\mods"; Components: MultiverseCore
-Source: "Files\Modman\mods\Multiverse 5.3 - Assets (Patch First).zip"; DestDir: "{app}\mods"; Components: MultiverseCore
-Source: "Files\Modman\mods\Multiverse 5.3 - Data.zip"; DestDir: "{app}\mods"; Components: MultiverseCore
-Source: "Files\Modman\mods\Multiverse - TRC 1.3.zip"; DestDir: "{app}\mods"; Flags: ignoreversion; Components: MultiverseCore\TRC
+Source: "Files\Modman\mods\Multiverse 5.4 - Assets (Patch above Data).zip"; DestDir: "{app}\mods"; Components: MultiverseCore
+Source: "Files\Modman\mods\Multiverse 5.4.1 - Data.zip"; DestDir: "{app}\mods"; Components: MultiverseCore
+Source: "Files\Modman\mods\Multiverse - TRC 2.3.zip"; DestDir: "{app}\mods"; Flags: ignoreversion; Components: MultiverseCore\TRC
 Source: "Files\Modman\mods\Multiverse - VanUI 2.0.zip"; DestDir: "{app}\mods"; Flags: ignoreversion; Components: MultiverseCore\VanillaUI
-Source: "Files\Modman\mods\Multiverse - Holiday Special.zip"; DestDir: "{app}\mods"; Flags: ignoreversion; Components: MultiverseCore\Holiday
 Source: "Files\Modman\mods\Multiverse - SlockFlag.zip"; DestDir: "{app}\mods"; Flags: ignoreversion; Components: MultiverseCore\SlockFlag
 
-Source: "Files\Modman\mods\MVDif - Scrap Starvation 1.0.zip"; DestDir: "{app}\mods"; Flags: ignoreversion; Components: MultiverseDiff\Starvation
-
-Source: "Files\Modman\mods\MVAdn - GenGibs v1.0.2.zip"; DestDir: "{app}\mods"; Flags: ignoreversion; Components: MultiverseThr\GenGibs
+Source: "Files\Modman\mods\MVAdn - GenGibs v1.3.5.zip"; DestDir: "{app}\mods"; Flags: ignoreversion; Components: MultiverseThr\GenGibs
+Source: "Files\Modman\mods\MVAdn - GenGibs TRC v1.3.5.zip"; DestDir: "{app}\mods"; Flags: ignoreversion; Components: MultiverseThr\GenGibs
 
 Source: "Files\FTL downgrade\*"; DestDir: "{app}\"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: Hyperspace
 Source: "Files\Hyperspace.dll"; DestDir: "{app}\"; Flags: ignoreversion; Components: Hyperspace
@@ -131,10 +125,10 @@ begin
     Result := '--patch';
 
   if IsComponentSelected('MultiverseCore') then
-    Result := Result + ' "MV Read Me.zip"' + ' "Multiverse 5.3 - Assets (Patch First).zip"' + ' "Multiverse 5.3 - Data.zip"'; ; 
+    Result := Result + ' "MV Read Me.zip"' + ' "Multiverse 5.4 - Assets (Patch above Data).zip"' + ' "Multiverse 5.4.1 - Data.zip"'; ; 
 
   if IsComponentSelected('MultiverseCore\TRC') then
-    Result := Result + ' "Multiverse - TRC 1.3.zip"';
+    Result := Result + ' "Multiverse - TRC 2.3.zip"';
 	
   if IsComponentSelected('MultiverseCore\SlockFlag') then
     Result := Result + ' "Multiverse - SlockFlag.zip"';
@@ -142,14 +136,11 @@ begin
   if IsComponentSelected('MultiverseCore\VanillaUI') then
     Result := Result + ' "Multiverse - VanUI 2.0.zip"';
 	
-  if IsComponentSelected('MultiverseCore\Holiday') then
-    Result := Result + ' "Multiverse - Holiday Special.zip"';
-	
-  if IsComponentSelected('MultiverseDiff\Starvation') then
-    Result := Result + ' "MVDif - Scrap Starvation 1.0.zip"';
-	
   if IsComponentSelected('MultiverseThr\GenGibs') then
-    Result := Result + ' "MVAdn - GenGibs v1.0.2.zip"';
+    Result := Result + ' "MVAdn - GenGibs v1.3.5.zip"';
+
+  if IsComponentSelected('MultiverseThr\GenGibs') then
+    Result := Result + ' "MVAdn - GenGibs TRC v1.3.5.zip"';
 end;
 
 
@@ -502,15 +493,13 @@ begin
   'Adds a large new arsenal of weapons to the loot pool and additional playable ships centered around them, which focus on more unique gimmicks with less attention to balance.;'+ //TRC
   'Adds a very powerful and unlockable type B to the Pleasure Flagship player ship. Originally created as a prize for the 2021 Discord Christmas contest.;'+ //SLOCKNOG'S FLAGSHIP
   'Overrides the custom Multiverse UI and restores a vanilla-esque theme. We recommend you at least try the default MV theme first.;'+ //VANUI
-  'Swaps out various textures and UI elements for winter holiday themed ones.;'+ //HOLIDAY
-  'Various minor balance tweak patches to further customize your experience. Not recommended for new players.;'+ //DIFFICULTY
-  'Signifigantly reduces scrap gains to add an extra challenge to the game.;'+ //SCRAP STARVE
   'A collection of approved third party addons, not developed by the core Multiverse team.;'+ //THIRD PARTY
   'Adds programmatically generated Gibs, preventing many ship types from simply disappearing when destroyed. Note: Increases startup time by about 20% and also increases memory consumption.;'+ //GEN GIBS
+  'Gengibs support for The Renegade Collection official addon.;'+ //GEN GIBS TRC
   '[Mandatory] The core Hyperspace API that enables the creation of new player ships, crew, advanced event manipulation, etc;'+ //HS
   '[Mandatory] Additional Lua API that enables Lua scripting;' //LUA
   );
   
-  //Core - TRC - SlockFlag - VanUI - Holiday - Diff - Starv - 3rdP - GenGibs - GG Beta - HS - Lua
+  //Core - TRC - SlockFlag - VanUI - 3rdP - GenGibs - GG Beta - GG TRC - HS - Lua
   //'WARNING: Incompatible with the Vanilla UI patch! A unique challenge mode inspired by the 2015 GenCool mod Sensory Deprivation. Limits the information displayed in the UI and tooltips, forcing you to rely more on your knowledge of the game.;'+ //SENSORY DEPRIVATION
 end;
